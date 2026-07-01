@@ -5,104 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>목차 · Etz Chaim Journey</title>
 <link rel="stylesheet" href="style.css">
+<style>
+  .toc-wrap { max-width: 760px; margin: 0 auto; padding: 120px 24px 100px; }
+  .toc-heading { text-align:center; margin-bottom: 60px; }
+  .toc-poster-block { margin-bottom: 64px; }
+  .toc-poster {
+    width: 100%;
+    display: block;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94), border-color 0.4s;
+  }
+  .toc-poster:hover { transform: translateY(-6px) scale(1.01); border-color: rgba(201,168,76,0.3); }
+  .toc-expand-hint { text-align:center; margin-top: 14px; font-size: 10px; letter-spacing: 0.3em; color: var(--mist); text-transform: uppercase; }
+</style>
 </head>
 <body>
 <a class="back-btn" href="index.html">← 여정으로</a>
-<div class="content-sections" style="max-width: 760px; margin: 0 auto; padding-top: 4rem;">
+<audio id="page-audio" loop preload="auto">
+  <source src="toc-music.mp3" type="audio/mpeg">
+</audio>
+<div class="music-btn" id="music-btn" onclick="toggleMusic('page-audio','music-btn')">♪</div>
 
-  <div class="section-block" style="text-align:center; margin-bottom: 3rem;">
-    <div class="section-label" style="letter-spacing: 0.08em;">목차로 보는</div>
+<div class="toc-wrap">
+  <div class="toc-heading">
+    <div class="section-label" style="justify-content:center;">목차로 보는</div>
   </div>
 
-  <div class="water-divider">∿ ∿ ∿</div>
-
-  <div class="section-block">
-    <div class="section-label">1부 · 보이지 않는 지도를 읽다</div>
-    <div class="section-text">
-      <p style="opacity:0.75;">— 친퀘테레의 절벽길에서 —</p>
-    </div>
-    <div class="section-text">
-      <p>프롤로그 · 회오리바람이 건넨 초대</p>
-      <p>1장 · 친퀘테레</p>
-      <p>2장 · 오르비에토 (백화로 가는 길)</p>
-      <p>3장 · 플리트비체</p>
-      <p>4장 · 소피아를 만나다</p>
-      <p>5장 · 두브로브니크</p>
-      <p>6장 · 쇤부른</p>
-      <p>7장 · 프라하</p>
-    </div>
-    <div class="quote-block">
-      <p>"모든 여행자에게는 그들이 아직 알지 못하는 목적지가 있다.<br>
-      중요한 것은 그 길 위에서 자신을 잃지 않는 것이다."<br>
-      — 랍비 나흐만 —</p>
-    </div>
-  </div>
-
-  <div class="water-divider">∿ ∿ ∿</div>
-
-  <div class="section-block">
-    <div class="section-label">2부 · 지구 반대편에서 만난 빛</div>
-    <div class="section-text">
-      <p style="opacity:0.75;">— 호주에서 뉴질랜드까지 —</p>
-    </div>
-    <div class="section-text">
-      <p>8장 · 좋은 느낌 16초</p>
-      <p>9장 · 지구 반대편에서 울린 공명</p>
-      <p>10장 · 모스만의 공시성</p>
-      <p>11장 · 상흔과 상처의 거울</p>
-      <p>12장 · 쿠지 비치의 매직 아워</p>
-      <p>13장 · 지구 반대편의 호출 장소에 서다</p>
-      <p>14장 · 테카포의 물빛이 알려준 것</p>
-      <p>15장 · 퍼킨스 베이와 데자뷔</p>
-      <p>16장 · 너로 충분하다</p>
-    </div>
-    <div class="quote-block">
-      <p>모든 여행자에게는 그들이 아직 알지 못하는 목적지가 있다.</p>
+  <div class="toc-poster-block">
+    <img class="toc-poster" src="part1.png" alt="1부 · 보이지 않는 지도를 읽다" onclick="toggleSection('toc1Toggle','toc1Content')">
+    <div class="toc-expand-hint">tap to open · 챕터 보기</div>
+    <div class="deep-toggle" id="toc1Toggle" style="display:none;"></div>
+    <div class="deep-content" id="toc1Content">
+      <div class="deep-inner section-text">
+        <p>프롤로그 · 회오리바람이 건넨 초대</p>
+        <p>1장 · 친퀘테레</p>
+        <p>2장 · 오르비에토 (백화로 가는 길)</p>
+        <p>3장 · 플리트비체</p>
+        <p>4장 · 소피아를 만나다</p>
+        <p>5장 · 두브로브니크</p>
+        <p>6장 · 쇤부른</p>
+        <p>7장 · 프라하</p>
+      </div>
+      <div class="quote-block">
+        <p>"모든 여행자에게는 그들이 아직 알지 못하는 목적지가 있다.<br>
+        중요한 것은 그 길 위에서 자신을 잃지 않는 것이다."<br>
+        — 랍비 나흐만 —</p>
+      </div>
     </div>
   </div>
 
-  <div class="water-divider">∿ ∿ ∿</div>
-
-  <div class="section-block">
-    <div class="section-label">3부 · 로포텐, 끝과 시작 사이</div>
-    <div class="section-text">
-      <p>1장 · 목성 여행 - 의미를 향한 이동</p>
-      <p>2장 · 두려움 너머의 풍경</p>
-      <p>3장 · 핀세 1222, 예정에 없던 정차</p>
-      <p>4장 · 환대가 무너뜨린 확신</p>
-      <p>5장 · 가장 아름다운 곳에서 만난 불청객</p>
-      <p>6장 · 로포텐의 백야에 잠 못 들고</p>
-      <p>7장 · 리미널리티</p>
-      <p>8장 · 보이지 않는 동행</p>
-      <p>9장 · 끝에서 시작되는 신뢰의 길</p>
-    </div>
-    <div class="quote-block">
-      <p>두려움은 길 위에 있는 것이 아니라,<br>내가 지키고 있던 확신 속에 있었다.</p>
-    </div>
-  </div>
-
-  <div class="water-divider">∿ ∿ ∿</div>
-
-  <div class="section-block">
-    <div class="section-label">4부 · 산티아고와 그 너머</div>
-    <div class="section-text">
-      <p style="opacity:0.75;">— 끝에서 다시 시작되는 길 —</p>
-    </div>
-    <div class="section-text">
-      <p>10장 · 빛은 어둠을 통해 온다</p>
-      <p>11장 · 피스테라에서 만난 진실</p>
-      <p>12장 · 여기 땅이 끝나고 바다가 시작된다 — 호카곶에서</p>
-      <p>13장 · 카사블랑카의 나를 잊지 말아요</p>
-      <p>14장 · 호카곶의 파도가 연결한 감응력</p>
-      <p>15장 · 아인과 황야의 호수</p>
-      <p>에필로그 · 행복은 선택하는 자에게 온다</p>
-    </div>
-    <div class="quote-block">
-      <p>끝이라고 믿었던 곳에서 비로소 시작할 수 있었다.</p>
+  <div class="toc-poster-block">
+    <img class="toc-poster" src="part2.png" alt="2부 · 지구 반대편에서 만난 빛" onclick="toggleSection('toc2Toggle','toc2Content')">
+    <div class="toc-expand-hint">tap to open · 챕터 보기</div>
+    <div class="deep-toggle" id="toc2Toggle" style="display:none;"></div>
+    <div class="deep-content" id="toc2Content">
+      <div class="deep-inner section-text">
+        <p>8장 · 좋은 느낌 16초</p>
+        <p>9장 · 지구 반대편에서 울린 공명</p>
+        <p>10장 · 모스만의 공시성</p>
+        <p>11장 · 상흔과 상처의 거울</p>
+        <p>12장 · 쿠지 비치의 매직 아워</p>
+        <p>13장 · 지구 반대편의 호출 장소에 서다</p>
+        <p>14장 · 테카포의 물빛이 알려준 것</p>
+        <p>15장 · 퍼킨스 베이와 데자뷔</p>
+        <p>16장 · 너로 충분하다</p>
+      </div>
     </div>
   </div>
 
+  <div class="toc-poster-block">
+    <img class="toc-poster" src="part3.png" alt="3부 · 로포텐, 끝과 시작 사이" onclick="toggleSection('toc3Toggle','toc3Content')">
+    <div class="toc-expand-hint">tap to open · 챕터 보기</div>
+    <div class="deep-toggle" id="toc3Toggle" style="display:none;"></div>
+    <div class="deep-content" id="toc3Content">
+      <div class="deep-inner section-text">
+        <p>1장 · 목성 여행 - 의미를 향한 이동</p>
+        <p>2장 · 두려움 너머의 풍경</p>
+        <p>3장 · 핀세 1222, 예정에 없던 정차</p>
+        <p>4장 · 환대가 무너뜨린 확신</p>
+        <p>5장 · 가장 아름다운 곳에서 만난 불청객</p>
+        <p>6장 · 로포텐의 백야에 잠 못 들고</p>
+        <p>7장 · 리미널리티</p>
+        <p>8장 · 보이지 않는 동행</p>
+        <p>9장 · 끝에서 시작되는 신뢰의 길</p>
+      </div>
+      <div class="quote-block">
+        <p>두려움은 길 위에 있는 것이 아니라,<br>내가 지키고 있던 확신 속에 있었다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toc-poster-block">
+    <img class="toc-poster" src="part4.png" alt="4부 · 산티아고와 그 너머" onclick="toggleSection('toc4Toggle','toc4Content')">
+    <div class="toc-expand-hint">tap to open · 챕터 보기</div>
+    <div class="deep-toggle" id="toc4Toggle" style="display:none;"></div>
+    <div class="deep-content" id="toc4Content">
+      <div class="deep-inner section-text">
+        <p>10장 · 빛은 어둠을 통해 온다</p>
+        <p>11장 · 피스테라에서 만난 진실</p>
+        <p>12장 · 여기 땅이 끝나고 바다가 시작된다 — 호카곶에서</p>
+        <p>13장 · 카사블랑카의 나를 잊지 말아요</p>
+        <p>14장 · 호카곶의 파도가 연결한 감응력</p>
+        <p>15장 · 아인과 황야의 호수</p>
+        <p>에필로그 · 행복은 선택하는 자에게 온다</p>
+      </div>
+      <div class="quote-block">
+        <p>끝이라고 믿었던 곳에서 비로소 시작할 수 있었다.</p>
+      </div>
+    </div>
+  </div>
 </div>
+
 <script src="main.js"></script>
 </body>
 </html>
