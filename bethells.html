@@ -112,6 +112,19 @@
   }
   audio1.addEventListener('playing', hideHint);
   audio2.addEventListener('playing', hideHint);
+  audio1.addEventListener('waiting', showHint);
+  audio2.addEventListener('waiting', showHint);
+
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      if (!audio1.paused) {
+        state.playing = true;
+        var btn = document.getElementById('music-btn');
+        if (btn) btn.textContent = '❚❚';
+        if (audio1.readyState < 3) showHint();
+      }
+    }, 150);
+  });
 
   window.toggleJourneyMusic = function (btnId) {
     var btn = document.getElementById(btnId);
