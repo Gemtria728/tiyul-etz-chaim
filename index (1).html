@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etz Chaim Journey</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .journey-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .journey-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    padding: 6rem 1rem 2rem 1.5rem;
+    box-sizing: border-box;
+  }
+  .journey-sidebar-item {
+    display: block;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.9rem;
+    border-radius: 6px;
+    background: #f4ede1;
+    color: #4a3f2c;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .journey-sidebar-item:hover {
+    background: #ecdfc8;
+  }
+  .journey-sidebar-item.active {
+    background: #9c7d2e;
+    color: #fff;
+    font-weight: 600;
+  }
+  .journey-sidebar-divider {
+    height: 1px;
+    background: rgba(74,63,44,0.18);
+    margin: 0.6rem 0.4rem 1rem;
+  }
+  .journey-sidebar-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: #9c8a68;
+    padding: 0 0.4rem 0.4rem;
+    text-transform: uppercase;
+  }
+  .journey-sidebar-item.story {
+    background: rgba(156,125,46,0.14);
+    border: 1px dashed rgba(156,125,46,0.55);
+    font-size: 0.92rem;
+    font-style: italic;
+    color: #4a3f2c;
+  }
+  .journey-sidebar-item.story:hover {
+    background: rgba(156,125,46,0.24);
+  }
+  .journey-main {
+    flex: 1;
+    min-width: 0;
+  }
+  @media (max-width: 900px) {
+    .journey-layout { flex-direction: column; }
+    .journey-sidebar { width: 100%; display: flex; flex-wrap: wrap; gap: 0.6rem; padding: 1.2rem; }
+    .journey-sidebar-item { margin-bottom: 0; flex: 1 1 auto; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<a class="back-btn" id="backBtn" href="#">← 여정으로</a>
+<audio id="page-audio" loop preload="auto">
+  <source src="cathedral-breath.mp3" type="audio/mpeg">
+</audio>
+<div class="music-btn" id="music-btn" onclick="toggleMusic('page-audio','music-btn')">♪</div>
+
+<div class="journey-layout">
+  <nav class="journey-sidebar">
+    <a class="journey-sidebar-item active" href="index.html">전체 여행지 보기</a>
+    <a class="journey-sidebar-item" href="toc.html">목차로 보는</a>
+    <a class="journey-sidebar-item" href="background.html">배경지로 보는</a>
+    <a class="journey-sidebar-item" href="etzchaim.html">에츠하임으로 보는</a>
+    <div class="journey-sidebar-divider"></div>
+    <div class="journey-sidebar-label">이어지는 이야기</div>
+    <a class="journey-sidebar-item story" href="tiyul.html">스토리텔링 · 티울 레에츠 하하임</a>
+  </nav>
+
+  <div class="journey-main">
+    <div id="gate">
+      <div class="gate-bg"></div>
+      <div class="gate-fog"></div>
+      <div class="gate-content">
+        <div class="gate-eyebrow">Etz Chaim · 에츠 하임 살아보기</div>
+        <div class="gate-title">Etz Chaim Journey</div>
+        <div class="gate-subtitle">생명나무를 걷는 여정</div>
+        <div class="gate-tagline">
+          "이제 조금 더 깊이 들어가 볼까요?"<br>
+          당신이 끄덕이면, 두 번째 여행이 시작됩니다.
+        </div>
+        <div class="gate-grid">
+          <div class="gate-card" onclick="location.href='mont.html'">
+            <img src="mont.png" alt="몽생미셸">
+            <div class="gate-card-overlay">
+              <div class="card-num">01</div>
+              <div class="card-path">Path מ · Mem</div>
+              <div class="card-name">몽생미셸</div>
+              <div class="card-tag">경계에서 시작되는 길</div>
+              <div class="card-enter">Enter</div>
+            </div>
+          </div>
+          <div class="gate-card" onclick="location.href='bethells.html'">
+            <img src="bethells-piano.png" alt="베델스 비치">
+            <div class="gate-card-overlay">
+              <div class="card-num">02</div>
+              <div class="card-path">Path ר · Resh</div>
+              <div class="card-name">베델스 비치</div>
+              <div class="card-tag">침묵이 가장 아름다운<br>풍경이 되는 곳</div>
+              <div class="card-enter">Enter</div>
+            </div>
+          </div>
+          <div class="gate-card" onclick="location.href='lofoten.html'">
+            <img src="lofoten-reveal.jpg" alt="로포텐">
+            <div class="gate-card-overlay">
+              <div class="card-num">03</div>
+              <div class="card-path">Path נ · Nun</div>
+              <div class="card-name">로포텐</div>
+              <div class="card-tag">침묵 속에서<br>길을 찾는 시간</div>
+              <div class="card-enter">Enter</div>
+            </div>
+          </div>
+          <div class="gate-card" onclick="location.href='finse.html'">
+            <img src="finse-hotel-collage.jpg" alt="핀세">
+            <div class="gate-card-overlay">
+              <div class="card-num">04</div>
+              <div class="card-path">Path ע · Ayin</div>
+              <div class="card-name">핀세</div>
+              <div class="card-tag">착각이 무너지는<br>황야의 호수</div>
+              <div class="card-enter">Enter</div>
+            </div>
+          </div>
+          <div class="gate-card" onclick="location.href='hokakou.html'">
+            <img src="hokakou-hero.png" alt="호카곶">
+            <div class="gate-card-overlay">
+              <div class="card-num">05</div>
+              <div class="card-path">Path · Tiferet</div>
+              <div class="card-name">호카곶</div>
+              <div class="card-tag">끝에서<br>길을 본 사람들</div>
+              <div class="card-enter">Enter</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gate-footer">
+        Dream <span>·</span> Travel <span>·</span> Remember <span>·</span> Transform
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
